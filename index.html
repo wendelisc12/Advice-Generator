@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -10,6 +10,28 @@
     <link rel="stylesheet" href="build/styles/style.css">
 </head>
     <body>
-        <img src="src/images/pattern-divider-desktop.svg" alt="">
+        <main>
+            <div id="select-language">
+                <select name="language" id="language">
+                    <option value="en" selected>🇺🇸</option>
+                    <option value="pt">🇧🇷</option>
+                    <option value="es">🇪🇸</option>
+                </select>
+            </div>
+            <section id="conselho-box">
+                <p id="numero-conselho">Advice #<span id="numero"></span></p>
+                <h1 id="conselho"></h1>
+                <div id="final">
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="src/images/pattern-divider-mobile.svg">
+                        <img src="src/images/pattern-divider-desktop.svg" alt="">
+                    </picture>
+                </div>
+                <button id="roll-dice"><img src="src/images/icon-dice.svg" alt=""></button>
+            </section>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="src/script/index.js"></script>
     </body>
 </html>

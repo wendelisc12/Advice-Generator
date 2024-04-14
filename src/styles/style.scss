@@ -1,3 +1,85 @@
-body{
-    background-color: red;
-}
+    @use "padrao.scss";
+    @use "map.scss";
+
+    body{
+        background-color: map-get(map.$neutralColors, fundo);
+    }
+
+    @mixin align-center(){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main{
+        height: 100vh;
+        @include align-center();
+
+        section{
+            display: none;
+            text-align: center;
+            border-radius: 20px;
+            min-width: 300px;
+            max-width: 500px;
+            width: 50%;
+            padding: 25px 25px 45px 25px;
+            background-color: map-get(map.$neutralColors, fundoEscuro );
+            word-wrap: break-word;
+            position: relative;
+
+            #numero-conselho{
+                letter-spacing: 3px;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                color: map-get(map.$primaryColors, verdeNeon );
+            }
+
+            #conselho{
+                display: none;
+                margin: 25px 0;
+                color: map-get(map.$primaryColors, textoConselho );
+                font-size: 28px;
+            }
+
+            #final{
+                @include align-center();
+                overflow: hidden;
+            }
+
+            #roll-dice{
+                border: 0;
+                background-color: map-get(map.$primaryColors, verdeNeon );
+                width: 55px;
+                height: 55px;
+                @include align-center();
+                border-radius: 50%;
+                cursor: pointer;
+                transition: box-shadow 400ms ease-in;
+                position: absolute;
+                left: calc(50% - 27.5px);
+                bottom: -27.5px;
+
+                &:hover{
+                    box-shadow: 0 0 20px map-get(map.$primaryColors, verdeNeon );
+                }
+            }
+        }
+
+        #select-language{
+            position: absolute;
+            left: calc(50% - 30px);
+            top: 10px;
+
+            select{
+                width: 60px;
+                outline: none;
+                background-color: map-get(map.$neutralColors , modal );
+                border: 0;
+                border-radius: 5px;
+                color: map-get(map.$primaryColors, verdeNeon );
+                padding: 5px;
+                font-size: 20px;
+            }
+        }
+    }
